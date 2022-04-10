@@ -17,15 +17,17 @@ local instances = {
 }
 
 
-screenGui.Name = 'Notification'
+screenGui.Name = title
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 instances.Frame_1.Parent = screenGui
+instances.Frame_1.Name = 'Main'
+
+
 instances.Frame_1.BackgroundColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
 instances.Frame_1.BorderSizePixel = 0
-instances.Frame_1.Position = UDim2.new(2, 0, 0.5090000033378601, 0)
-instances.Frame_1.Size = UDim2.new(0, 226, 0, 61)
-instances.Frame_1.Name = title
+instances.Frame_1.Position = UDim2.new(1, 0,0.509, 0)
+instances.Frame_1.Size = UDim2.new(0, 331, 0, 61)
 
 instances.Frame_2.Parent = instances.Frame_1
 instances.Frame_2.BackgroundColor3 = Color3.new(0.0431373, 0.0431373, 0.0431373)
@@ -39,30 +41,27 @@ instances.UICorner_2.Parent = instances.Frame_1
 instances.UICorner_2.CornerRadius = UDim.new(0, 7)
 
 instances.TextLabel_1.Parent = instances.Frame_1
-pcall(function()
 instances.TextLabel_1.Font = Enum.Font[font]
-end)
-instances.TextLabel_1.Text = (title or "Default Title")
+instances.TextLabel_1.Text = title
 instances.TextLabel_1.TextColor3 = Color3.new(1, 1, 1)
 instances.TextLabel_1.TextSize = 14
 instances.TextLabel_1.TextXAlignment = Enum.TextXAlignment.Left
 instances.TextLabel_1.BackgroundColor3 = Color3.new(1, 1, 1)
 instances.TextLabel_1.BackgroundTransparency = 1
-instances.TextLabel_1.Position = UDim2.new(0.11061947047710419, 0, 0.11538445949554443, 0)
-instances.TextLabel_1.Size = UDim2.new(0, 165, 0, 14)
+instances.TextLabel_1.Position = UDim2.new(0.08849557489156723, 0, 0, 0)
+instances.TextLabel_1.Size = UDim2.new(0, 201, 0, 28)
 instances.TextLabel_1.Name = 'Title'
 
 instances.TextLabel_2.Parent = instances.Frame_1
-pcall(function()
-instances.TextLabel_2.Font = Enum.Font[font2] or Enum.Font.Gotham end)
-instances.TextLabel_2.Text = desc or "Default Text"
+instances.TextLabel_2.Font = Enum.Font[font2]
+instances.TextLabel_2.Text = desc
 instances.TextLabel_2.TextColor3 = Color3.new(1, 1, 1)
 instances.TextLabel_2.TextSize = 13
 instances.TextLabel_2.TextTruncate = Enum.TextTruncate.AtEnd
 instances.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 instances.TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
 instances.TextLabel_2.BackgroundTransparency = 1
-instances.TextLabel_2.Position = UDim2.new(0.11061947047710419, 0, 0.5384615659713745, 0)
+instances.TextLabel_2.Position = UDim2.new(0.08645028620958328, 0, 0.6040353178977966, 0)
 instances.TextLabel_2.Size = UDim2.new(0, 191, 0, 9)
 instances.TextLabel_2.Name = 'Description'
 
@@ -70,11 +69,11 @@ instances.TextButton_1.Parent = instances.Frame_1
 instances.TextButton_1.Font = Enum.Font.GothamSemibold
 instances.TextButton_1.Text = 'X'
 instances.TextButton_1.TextColor3 = Color3.new(1, 1, 1)
-instances.TextButton_1.TextSize = 15
+instances.TextButton_1.TextSize = 18
 instances.TextButton_1.BackgroundColor3 = Color3.new(1, 1, 1)
 instances.TextButton_1.BackgroundTransparency = 1
-instances.TextButton_1.Position = UDim2.new(0.8849557638168335, 0, 0, 0)
-instances.TextButton_1.Size = UDim2.new(0, 16, 0, 21)
+instances.TextButton_1.Position = UDim2.new(0.9070796370506287, 0, 0, 0)
+instances.TextButton_1.Size = UDim2.new(0, 16, 0, 61)
 instances.TextButton_1.Name = 'Close'
 
 instances.LocalScript_1.Parent = instances.TextButton_1
@@ -95,31 +94,34 @@ local require = function(object)
 end
 
 
+
 function Code_LocalScript_1() --LocalScript
 	local script = instances.LocalScript_1
 
 	script.Parent.MouseButton1Down:Connect(function()
-		script.Parent.Parent:TweenPosition(UDim2.new(50,0,0,0),"InOut","Sine",7.2)
-		wait(7.2)
+	    script.Parent.Parent:TweenPosition(UDim2.new(50, 0,0,0),"InOut","Sine",7.2)
+		wait(2)
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
 coroutine.wrap(Code_LocalScript_1)()
 
 
-function Code_LocalScript_2() --LocalScript
+function Code_LocalScript_2()
 	local script = instances.LocalScript_2
-
-	local newpos = UDim2.new(0.88, 0,0.5, 0)
+	local newpos = UDim2.new(0.82, 0,0.507, 0)
 	
 	
 	script.Parent:TweenPosition(newpos,"InOut","Sine",0.5)
 end
-	coroutine.wrap(Code_LocalScript_2)()
-	wait(visibletime)
+coroutine.wrap(Code_LocalScript_2)()
+wait(visibletime)
 		instances.Frame_1:TweenPosition(UDim2.new(50,0,0,0),"InOut","Sine",7.2)
 		wait(2)
 		screenGui:Destroy()
+	
+	
+
 	end)
 end
 return notif
