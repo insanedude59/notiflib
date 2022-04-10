@@ -23,7 +23,7 @@ screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 instances.Frame_1.Parent = screenGui
 instances.Frame_1.BackgroundColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
 instances.Frame_1.BorderSizePixel = 0
-instances.Frame_1.Position = UDim2.new(2, 0, 0.5090000033378601, 0)
+instances.Frame_1.Position = UDim2.new(0, 331,0, 61)
 instances.Frame_1.Size = UDim2.new(0, 226, 0, 61)
 instances.Frame_1.Name = title
 
@@ -70,10 +70,10 @@ instances.TextButton_1.Parent = instances.Frame_1
 instances.TextButton_1.Font = Enum.Font.GothamSemibold
 instances.TextButton_1.Text = 'X'
 instances.TextButton_1.TextColor3 = Color3.new(1, 1, 1)
-instances.TextButton_1.TextSize = 15
+instances.TextButton_1.TextSize = 18
 instances.TextButton_1.BackgroundColor3 = Color3.new(1, 1, 1)
 instances.TextButton_1.BackgroundTransparency = 1
-instances.TextButton_1.Position = UDim2.new(0.8849557638168335, 0, 0, 0)
+instances.TextButton_1.Position = UDim2.new(0.907, 0,0, 0)
 instances.TextButton_1.Size = UDim2.new(0, 16, 0, 21)
 instances.TextButton_1.Name = 'Close'
 
